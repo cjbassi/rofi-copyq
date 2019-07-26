@@ -21,7 +21,7 @@ JSON.stringify(result);
 
 if __name__ == '__main__':
     p = sp.run('copyq -'.split(), input=copyq_script_getAll,
-               encoding='utf-8', capture_output=True)
+               encoding='utf-8', stdout=sp.PIPE, stderr=sp.PIPE)
     json_arr = json.loads(p.stdout)
 
     items = []
@@ -34,8 +34,8 @@ if __name__ == '__main__':
     rofi = f'rofi -dmenu -i -p {title} -format i'.split()
     rofi_input = '\n'.join(x for x in items)
 
-    p = sp.run(rofi, input=rofi_input, encoding='utf-8', capture_output=True)
+    p = sp.run(rofi, input=rofi_input, encoding='utf-8', stdout=sp.PIPE, stderr=sp.PIPE)
     if p.returncode == 0:
         num = p.stdout.strip()
         sp.run(f'copyq select({num});'.split(),
-               encoding='utf-8', capture_output=True)
+               encoding='utf-8', stdout=sp.PIPE, stderr=sp.PIPE)
