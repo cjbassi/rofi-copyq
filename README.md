@@ -4,8 +4,8 @@ Use [Rofi](https://github.com/DaveDavenport/rofi) to search [CopyQ](https://gith
 
 Requires:
 
-- rofi
-- copyq
+- Rofi
+- CopyQ
 
 ## Installation
 
