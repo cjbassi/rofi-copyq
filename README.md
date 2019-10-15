@@ -13,6 +13,9 @@ Requires:
 pip install --user git+https://github.com/cjbassi/rofi-copyq
 ```
 
+Note that `~/.local/bin` needs to be added to your `$PATH` for user installs.
+
+
 ## Usage
 
 Simply run `rofi-copyq`, probably through Rofi itself, and then you can search and select a CopyQ snippet to be put on the current clipboard.
