@@ -27,7 +27,7 @@ if __name__ == '__main__':
     items = []
     for json_obj in json_arr:
         text = json_obj['text']
-        text = " ".join(filter(None, text.replace("\r\n", " ").split(" ")))
+        text = " ".join(filter(None, text.replace("\n", " ").replace("\r", "").split(" ")))
         items.append(text)
 
     title = 'rofi-copyq'
